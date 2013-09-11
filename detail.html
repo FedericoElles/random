@@ -1,0 +1,131 @@
+<style>
+.done-false{
+  color: grey;
+}
+</style>
+
+
+<form name="myForm" ng-submit="formSubmit()">
+
+  <table class="control-group" ng-class="{error: myForm.name.$invalid}">
+    <tr>
+      <td width="30%">
+        <p>Name</p>
+      </td>
+      <td width="70%">
+          <div class="input">
+            <input placeholder="{{_t.enterlistname}}" type="text" name="name" ng-model="item.name" required>
+          </div>
+      </td>
+     
+    </tr>
+  </table>
+
+  <div class=section_header ng-show="item._id">
+    {{_t.possibilities}}
+  </div>
+
+<table ng-show="item._id">
+  <tbody>
+  <tr class="td_underscore" ng-repeat="subitem in (filteredItems = (item.items | orderBy:name))">
+    <td class="ts24"  >
+      <i ng-show="subitem.active" ng-click="subitem.active= false" class="icon-ok aDarkGreen pointer"></i>
+      <i ng-show="!subitem.active" ng-click="subitem.active= true" class="icon-ok aLightGrey pointer"></i>  
+    </td>
+    <td class="" ng-click="changeView(item._id)">
+      <p class="done-{{subitem.active}}">
+        {{subitem.name}}
+      </p>
+    </td>
+    <td class="ts36"  >
+      <i ng-show="subitem.star && subitem.active" ng-click="subitem.star = false" class="icon-star aDarkOrange pointer"></i>
+      <i ng-show="!subitem.star && subitem.active" ng-click="subitem.star = true" class="icon-star-empty aLightOrange pointer"></i>  
+    </td>
+    <td class="ts36" ng-click="deleteItem(subitem.name)" >
+      <i ng-show="subitem.active" class="icon-remove aDarkRed pointer"></i>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+ <table ng-show="item._id">
+    <tr>
+      <td >
+        <div class="input"><input on-enter="addItem()" placeholder="{{_t.enterpossibility}}" type=text ng-model="newsubitem" value=""></div>
+      </td>
+      <td>
+        <a class=button ng-click="addItem()" href=>{{_t.add}}</a>
+      </td>
+    </tr>
+  </table>
+
+  <div class=unit ng-show="!advanced && item._id">
+    <a class="action pointer" ng-click="advanced=true"><i class="icon-cog"></i>{{_t.advanced}}</a>
+  </div>
+
+  <div ng-show="advanced" >
+    <div class=section_header >
+      {{_t.advanced}}
+    </div>
+
+  <table>
+    <tr>
+      <td width="40%">
+         <p>{{_t.setcount}}</p>
+      </td>
+      <td width="80%" style="min-width:160px;" class=tdnumber>
+        <a class=actionicon ng-click="item.sets= item.sets-1"><i class="icon-minus"></i></a>
+        <div class="input">
+          <input type="number" ng-model="item.sets" required>
+        </div>
+        <a class=actionicon ng-click="item.sets= item.returns+1"><i class="icon-plus"></i></a>
+      </td>
+    </tr>
+    <tr ng-show="!item.team">
+      <td>
+         <p>{{_t.resultscount}}</p>
+      </td>
+      <td  class=tdnumber>
+        <a class=actionicon ng-click="item.returns= item.returns-1"><i class="icon-minus"></i></a>
+        <div class="input">
+          <input type="number" ng-model="item.returns" required>
+        </div>
+        <a class=actionicon ng-click="item.returns= item.returns+1"><i class="icon-plus"></i></a>
+      </td>
+    </tr>
+  </table>  
+
+  <div class=unit>
+    <label><input ng-model="item.team" type=checkbox /> <p>{{_t.distributeall}}</p></label>
+  </div>
+
+  <div class=unit>
+    <label><input ng-model="item.distribute" type=checkbox /> <p>{{_t.distributestarred}}</p></label>
+  </div>
+
+  </div>
+
+  <div class=unithalf>
+  </div>
+
+  <div class=unit>
+  <table>
+  <tr>
+    <td width="33%" >
+      <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+          class="button">{{_t.save}}</button>
+    </td>
+
+    <td width="33%" >
+      <button ng-click="destroy()"
+          ng-show="item._id" class="button">{{_t.delete}}</button>
+    </td>
+
+    <td width="33%" >
+      <a class="button" href="#/" class="button ">{{_t.cancel}}</a>
+    </td>
+  </tr>
+  </table>
+  </div>
+
+</form>

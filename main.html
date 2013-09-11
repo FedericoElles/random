@@ -1,0 +1,42 @@
+<div ng-show="filteredItems.length > 5"  class=unit>
+  <div class=input>
+    <input type="text" ng-model="search" class="search-query" placeholder="{{_t.search}}">
+  </div>
+</div>
+
+  <div ng-show="filteredItems.length < 6" class="aDarkGrey section">
+    <i class="icon icon-info-sign"></i>
+    <p class=icon> {{_t.intro}}</p>
+  </div>
+
+  <div class=section_header>
+    {{_t.lists}}
+  </div>
+
+<table>
+  <tbody>
+  <tr class="td_underscore" ng-repeat="item in (filteredItems = (items | filter:search | orderBy:order))">
+    <td class="pointer" ng-click="rand($index)">
+      <p>
+        {{item.name}}
+        <span class="aDarkGreen" ng-show="item.result"><i class=icon-double-angle-right></i> {{item.result}}!</span>
+        <span class="aDarkBlue" ng-show="!item.result">?</span>
+        <span class="aDarkBlue" ng-show="item.sets> 1"><i class="icon-external-link"></i></span>
+        <span class="aDarkOrange " ng-show="item.thinking">{{_t.thinking}}</span>
+      </p>
+    </td>
+    <td class="ts36" ng-click="changeView(item._id)">
+      <i  class="pointer icon-pencil aDarkBlue"></i>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div ng-show="filteredItems.length < 1" class=unit>
+  <p>{{_t.notfound}}</p>
+</div>
+
+
+  <div class=unit>
+    <a class=action href="#/new/{{search}}"><i class="icon-plus-sign"></i> {{_t.createnew}}</a>
+  </div>

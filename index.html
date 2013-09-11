@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Decision Maker</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no">
+
+    <script src="jquery.min.js"></script>
+
+    <script src="angular.min.js"></script>
+    <script src="android.js"></script>
+    <script src="randomdecisionmaker/pages/js"></script>
+
+
+    <script src="project.js"></script>
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+  </head>
+  <body>
+
+<div id=actionbar class=light>
+  <div class=back><i class="icon-angle-left"></i></div>
+  <div class=icon >
+    <img src="http://commondatastorage.googleapis.com/akaparis/randomdecisionmaker/logo_96.png">
+  </div>
+  <div class=title xtitle=""></div>
+  <div class=menu></div>
+</div>
+
+<div class=page id=page_main>
+    <div ng-view>Loading...</div>
+</div>
+
+
+<script>
+
+  $(function(){
+    actionbar.cbNotAvailable = function(){
+      //location.href = 'http://www.test.de' //image
+    }
+    actionbar.init() 
+
+  })
+  
+
+</script>
+
+  </body>
+</html>

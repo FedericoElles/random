@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0",
+    "name": "Random",
+    "description": "Random Decision Maker 4 Lists.",
+    "launch_path": "/random/index.html",
+    "appcache_path": "/random/app.manifest",
+    "icons": {
+        "16":  "/random/img/icons/random-16.png",
+        "48":  "/random/img/icons/random-48.png",
+        "128": "/random/img/icons/random-128.png",
+        "60":  "/random/img/icons/random-60.png",
+        "256": "/random/img/icons/random-256.png"        
+    },
+    "developer": {
+        "name": "Federico Elles",
+        "url": "https://github.com/FedericoElles"
+    },
+    "installs_allowed_from": ["*"],
+    "locales": {},
+    "default_locale": "en",  
+    "permissions": {}
+}

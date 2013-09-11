@@ -1,0 +1,16 @@
+<div ng-repeat="group in results">
+  <div class=section_header>
+    {{_t.set}} {{$index+1}}
+  </div>
+  <ul class=section>
+   <li ng-repeat="name in group">{{name}}</li>
+  </ul>
+</div>
+
+  <div class=unithalf> 
+    
+  </div>
+
+  <div class=unit>
+    <a class=button ng-click="rand()">{{_t.shuffle}}</a>
+  </div>
