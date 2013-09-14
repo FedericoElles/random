@@ -11,10 +11,345 @@
 
     <script src="angular.min.js"></script>
     <script src="android.js"></script>
-    <script src="randomdecisionmaker/pages/js"></script>
+    <script>//
+var oInitial = {}
+
+oInitial['en'] = {
+    "1": {
+        "name": "Coin Flip",
+        "returns": 1,
+        "sets": 1,
+        "distribute": false,
+        "team": true,
+        "items": {
+            "Heads": {
+                "name": "Heads",
+                "star": false,
+                "active": true
+            },
+            "Tails": {
+                "name": "Tails",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 1,
+        "thinking": false,
+        "result": ""
+    },
+    "2": {
+        "name": "Football Team",
+        "returns": 1,
+        "sets": 2,
+        "distribute": true,
+        "items": {
+            "Max": {
+                "name": "Max",
+                "star": false,
+                "active": true
+            },
+            "Sam": {
+                "name": "Sam",
+                "star": false,
+                "active": true
+            },
+            "Fritz": {
+                "name": "Fritz",
+                "star": false,
+                "active": true
+            },
+            "Alex": {
+                "name": "Alex",
+                "star": true,
+                "active": true
+            },
+            "Luigi": {
+                "name": "Luigi",
+                "star": false,
+                "active": true
+            },
+            "Sergio": {
+                "name": "Sergio",
+                "star": true,
+                "active": true
+            },
+            "James": {
+                "name": "James",
+                "star": false,
+                "active": false
+            }
+        },
+        "_id": 2,
+        "thinking": false,
+        "result": "",
+        "team": true,
+        "option": true
+    },
+    "4": {
+        "name": "Should I do it?",
+        "team": false,
+        "returns": 1,
+        "sets": 1,
+        "distribute": false,
+        "items": {
+            "Yes": {
+                "name": "Yes",
+                "star": false,
+                "active": true
+            },
+            "No, don't": {
+                "name": "No, don't",
+                "star": false,
+                "active": true
+            },
+            "Run away": {
+                "name": "Run away",
+                "star": false,
+                "active": true
+            },
+            "Later": {
+                "name": "Later",
+                "star": false,
+                "active": true
+            },
+            "Yes, now!": {
+                "name": "Yes, now!",
+                "star": false,
+                "active": true
+            },
+            "Never": {
+                "name": "Never",
+                "star": false,
+                "active": true
+            },
+            "Tomorrow": {
+                "name": "Tomorrow",
+                "star": false,
+                "active": true
+            },
+            "Only, if it does not rain": {
+                "name": "Only, if it does not rain",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 4,
+        "thinking": false,
+        "result": ""
+    },
+    "5": {
+        "name": "Dice",
+        "team": false,
+        "returns": 1,
+        "sets": 1,
+        "distribute": false,
+        "items": {
+            "1": {
+                "name": "1",
+                "star": false,
+                "active": true
+            },
+            "2": {
+                "name": "2",
+                "star": false,
+                "active": true
+            },
+            "3": {
+                "name": "3",
+                "star": false,
+                "active": true
+            },
+            "4": {
+                "name": "4",
+                "star": false,
+                "active": true
+            },
+            "5": {
+                "name": "5",
+                "star": false,
+                "active": true
+            },
+            "6": {
+                "name": "6",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 5,
+        "thinking": false,
+        "result": ""
+    }
+}
+
+oInitial['de'] = {
+    "1": {
+        "name": "Muenze",
+        "returns": 1,
+        "sets": 1,
+        "team": true,
+        "distribute": false,
+        "items": {
+            "Kopf": {
+                "name": "Kopf",
+                "star": false,
+                "active": true
+            },
+            "Zahl": {
+                "name": "Zahl",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 1,
+        "thinking": false,
+        "result": ""
+    },
+    "2": {
+        "name": "Fussball Team",
+        "returns": 1,
+        "sets": 2,
+        "distribute": true,
+        "items": {
+            "Max": {
+                "name": "Max",
+                "star": false,
+                "active": true
+            },
+            "Sam": {
+                "name": "Sam",
+                "star": false,
+                "active": true
+            },
+            "Fritz": {
+                "name": "Fritz",
+                "star": false,
+                "active": true
+            },
+            "Alex": {
+                "name": "Alex",
+                "star": true,
+                "active": true
+            },
+            "Luigi": {
+                "name": "Luigi",
+                "star": false,
+                "active": true
+            },
+            "Sergio": {
+                "name": "Sergio",
+                "star": true,
+                "active": true
+            },
+            "Zweto": {
+                "name": "Zweto",
+                "star": false,
+                "active": false
+            }
+        },
+        "_id": 2,
+        "thinking": false,
+        "result": "",
+        "team": true,
+        "option": true
+    },
+    "4": {
+        "name": "Soll ich es tun?",
+        "team": false,
+        "returns": 1,
+        "sets": 1,
+        "distribute": false,
+        "items": {
+            "Ja": {
+                "name": "Ja",
+                "star": false,
+                "active": true
+            },
+            "Nein": {
+                "name": "Nein",
+                "star": false,
+                "active": true
+            },
+            "Renn weg": {
+                "name": "Renn weg",
+                "star": false,
+                "active": true
+            },
+            "Vertage es auf spaeter": {
+                "name": "Vertage es auf spaeter",
+                "star": false,
+                "active": true
+            },
+            "Ja, sofort!": {
+                "name": "Ja, sofort!",
+                "star": false,
+                "active": true
+            },
+            "Niemals": {
+                "name": "Niemals",
+                "star": false,
+                "active": true
+            },
+            "Morgen": {
+                "name": "Morgen",
+                "star": false,
+                "active": true
+            },
+            "Nur falls es nicht regnet!": {
+                "name": "Nur falls es nicht regnet!",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 4,
+        "thinking": false,
+        "result": ""
+    },
+    "5": {
+        "name": "Wuerfel",
+        "team": false,
+        "returns": 1,
+        "sets": 1,
+        "distribute": false,
+        "items": {
+            "1": {
+                "name": "1",
+                "star": false,
+                "active": true
+            },
+            "2": {
+                "name": "2",
+                "star": false,
+                "active": true
+            },
+            "3": {
+                "name": "3",
+                "star": false,
+                "active": true
+            },
+            "4": {
+                "name": "4",
+                "star": false,
+                "active": true
+            },
+            "5": {
+                "name": "5",
+                "star": false,
+                "active": true
+            },
+            "6": {
+                "name": "6",
+                "star": false,
+                "active": true
+            }
+        },
+        "_id": 5,
+        "thinking": false,
+        "result": ""
+    }
+}</script>
 
 
-    <script src="project.js"></script>
+    <script src="app.js"></script>
 
 
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -29,7 +364,7 @@
 <div id=actionbar class=light>
   <div class=back><i class="icon-angle-left"></i></div>
   <div class=icon >
-    <img src="http://commondatastorage.googleapis.com/akaparis/randomdecisionmaker/logo_96.png">
+    <img src="img/icons/random-96.png">
   </div>
   <div class=title xtitle=""></div>
   <div class=menu></div>

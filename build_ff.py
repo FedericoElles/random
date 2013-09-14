@@ -4,7 +4,7 @@ from jsmin import jsmin
 
 baseURL = 'http://shufflingsux.appspot.com/play/randomdecisionmaker/pages/'
 
-pages = ["app_js","main_html","detail_html","result_html","server"] #server must be last
+pages = ["app_js","js","main_html","detail_html","result_html","server"] #server must be last
 
 pagesHTML = {}
 
@@ -37,6 +37,8 @@ for page in pages:
   html = readURL(baseURL+page)
   html = html.replace('/play/randomdecisionmaker/pages/','')
 
+    
+
   if page == 'app_js':
     html = html.replace('_html','.html')
     html = html.replace('randomdecisionmaker/pages/','')
@@ -55,11 +57,14 @@ for page in pages:
     html = html.replace('<link href=\'http://fonts.googleapis.com/css?family=Roboto:700,500,400,300\' rel=\'stylesheet\' type=\'text/css\'>','')
     html = html.replace('/html/css/font-awesome.min.css','css/font-awesome.min.css')
 
-    html = html.replace('http://commondatastorage.googleapis.com/akaparis/randomdecisionmaker/randomdecisionmaker.png','img/icons/randomdecisionmaker-96.png') #icon folder
+    html = html.replace('<script src="randomdecisionmaker/pages/js"></script>','<script>'+pagesHTML['js']+'</script>')
+
+
+    html = html.replace('http://commondatastorage.googleapis.com/akaparis/randomdecisionmaker/logo_96.png','img/icons/random-96.png') #icon folder
     
     html = html.replace('<link rel="stylesheet" href="randomdecisionmaker/pages/css">','<link rel="stylesheet" href="style.css">')
                         
-    html = html.replace('randomdecisionmaker/pages/app_js','project.js')
+    html = html.replace('randomdecisionmaker/pages/app_js','app.js')
     
     writeFile ("index.html", html)
   else:

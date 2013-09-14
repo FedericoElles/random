@@ -14,12 +14,9 @@ http://randomapp.github.io/random/img/icons/random-60.png
 #internal HTML documents
 http://randomapp.github.io/random/result.html
 http://randomapp.github.io/random/main.html
-http://randomapp.github.io/random/app.js
-http://randomapp.github.io/random/jquery.min.js
 http://randomapp.github.io/random/index.html
 http://randomapp.github.io/random/detail.html
-http://randomapp.github.io/random/angular.min.js
-http://randomapp.github.io/random/android.js
+
 
 #style sheets
 http://randomapp.github.io/random/style.css
@@ -33,9 +30,11 @@ http://randomapp.github.io/random/css/font-awesome.min.css
 #style sheet images
 
 #javascript files
+http://randomapp.github.io/random/jquery.min.js
 http://randomapp.github.io/random/angular.min.js
 http://randomapp.github.io/random/js.js
 http://randomapp.github.io/random/app.js
+http://randomapp.github.io/random/android.js
 
 NETWORK:
 *
